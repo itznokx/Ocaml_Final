@@ -1,16 +1,16 @@
 (*-Typing variants-*)
-type nat 	= 	| NAT 		of int ;;
+type nat 		= 	| NAT 			of int ;;
 
-type boolean	= 	| BOOL 		of bool ;;
+type boolean	= 	| BOOL 			of bool ;;
 
-type nat->nat   =   	| SUC 		of nat 
-			| PRED 		of nat
+type nat->nat   =   | SUC 			of nat 
+					| PRED 			of nat
 
-type term       = 	| TERM_NAT	of nat 
-			| TERM_BOOL 	of bool 
-			| TERM_SUC	of nat
-			| TERM_PRED 	of nat
-			| TERM_EHZERO	of nat
+type term       = 	| TERM_NAT 		of nat 
+					| TERM_BOOL 	of bool 
+					| TERM_SUC 		of nat
+					| TERM_PRED 	of nat
+					| TERM_EHZERO	of nat
 ;;
 
 
