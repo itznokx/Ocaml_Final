@@ -1,13 +1,16 @@
 (*-Typing variants-*)
-type nat 		= Nat of int ;;
+type nat 	= 	| NAT 		of int ;;
 
-type boolean	= Bool of bool;;
+type boolean	= 	| BOOL 		of bool ;;
 
-type term       = 	| TT_Nat of nat 
-					| TT_Bool of bool 
-					| Suc of nat
-					| Pred of nat
-					| EhZero of nat
+type nat->nat   =   	| SUC 		of nat 
+			| PRED 		of nat
+
+type term       = 	| TERM_NAT	of nat 
+			| TERM_BOOL 	of bool 
+			| TERM_SUC	of nat
+			| TERM_PRED 	of nat
+			| TERM_EHZERO	of nat
 ;;
 
 
@@ -25,10 +28,7 @@ let separate 	(expression:string) : string list =
 	let l1 = String.split_on_char ' ' expression in
 	show l1 0; l1;;
 
-	
-
 let programa () =
-    let readline = read_line () in
-    separate (read_line()) ;;
+    separate (read_line ());;
 
 programa ();;
