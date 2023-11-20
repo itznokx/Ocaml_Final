@@ -1,11 +1,19 @@
-let rec analyze (expression: string) =
-  let exp_splited = Array.of_list(String.split_on_char ' ' expression) in
-  match exp_splited.(0) with
-      | "(" -> "To do"
-      | "true" | "false"  -> "Bool"
-      | "suc"  | "pred"   -> "Nat -> Nat"
-      | "ehzero"          -> "Nat -> Bool"
-      | _                 -> "!"
+let rec show 	(l1: string list) (count: int) =
+	match l1 with
+	| h::t 	-> Printf.printf "[%d] -> %s\n"count h; show t (count+1)
+	| []	-> ()
+;;
 
-  in
-  Printf.printf("%s\n") (analyze (read_line ()));;
+
+
+let separate 	(expression:string) : string list =
+	let l1 = String.split_on_char ' ' expression in
+	show l1 0; l1;;
+
+let rec analyze		(l1 : string list) 	=
+	
+
+let programa () =
+    separate (read_line ());;
+
+programa ();;
