@@ -29,6 +29,6 @@ let separate 	(expression:string) : string list =
 
 let programa () =
     let readline = read_line () in
-    separate (readline) ;;
+    separate (read_line()) ;;
 
 programa ();;
